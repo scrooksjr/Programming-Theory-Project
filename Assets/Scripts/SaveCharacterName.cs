@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public class SaveCharacterName : MonoBehaviour
 {
-    [SerializeField]
-    TMPro.TMP_Text character_text;
-    [SerializeField]
-    TMP_InputField display_character_name;
+    // ABSTRACTION
+
+    public TMPro.TMP_Text character_text;
+    public TMP_InputField display_character_name;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,10 @@ public class SaveCharacterName : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OnGUI();
+        CharacterName(); //call higher-level method
     }
 
-    public void OnGUI()
+    public void CharacterName() // higher-level method
     {
         character_text.text = display_character_name.text;
         PlayerPrefs.SetString("character_name", character_text.text);
