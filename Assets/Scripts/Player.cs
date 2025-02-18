@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     // ENCAPSULATION
 
     private int health;
+    [SerializeField]
+    private TMP_Text m_Text;
 
     // Getter and Setter for health.
     public int Health
@@ -20,6 +23,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         Health = 50; // Setting initial health.
-        Debug.Log("Player Health: " +  Health);
+        m_Text.text = "Health: " + Health;
     }
 }

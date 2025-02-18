@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
+using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
     [SerializeField]
     GameObject[] character;
+
+    [System.Serializable]
     public enum ChooseCharacter
     {
         Character1,
@@ -14,6 +19,7 @@ public class CharacterSelection : MonoBehaviour
     }
 
     public ChooseCharacter theCharacter;
+
     public void Update()
     {
         switch (theCharacter)
